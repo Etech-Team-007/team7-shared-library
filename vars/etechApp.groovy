@@ -8,9 +8,6 @@ pipeline{
 			}
 		}
 		stage('Code Deploy To feature'){
-			when {
-				branch 'feature'
-			}
 			parallel{
 				stage('1-Ida'){
 					steps{
@@ -25,9 +22,6 @@ pipeline{
 			}
         }
 		stage('Design'){
-			when {
-				branch 'develop'
-			}
 			parallel{
 				stage('3-Terence'){
 					steps{
@@ -42,9 +36,6 @@ pipeline{
 			}
 		}
 		stage('Testing/Deployment'){
-			when{
-				branch 'main'
-			}
 			parallel{
 				stage('5-Therese'){
 					steps{
